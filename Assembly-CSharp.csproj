@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Game\Trigger\EndWalkthroughTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlaySfxTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\TriggerBase.cs" />
+    <Compile Include="Assets\Scripts\Game\Usher.cs" />
     <Compile Include="Assets\Scripts\Game\Walkthrough.cs" />
     <Compile Include="Assets\Scripts\Game\WalkthroughManager.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
@@ -651,6 +652,15 @@
     </Reference>
     <Reference Include="Malee.ReorderableList">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Malee.ReorderableList.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

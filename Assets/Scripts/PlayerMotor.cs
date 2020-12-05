@@ -174,7 +174,8 @@ public class PlayerMotor : MonoBehaviour
 
         IsWalking = Input.GetKey(KeyCode.LeftShift);
 
-        if (Input.GetKeyDown(KeyCode.Space) && !_isGonnaJump)
+        if (false && // @7DFPS: Jumping is disabled in this game
+            Input.GetKeyDown(KeyCode.Space) && !_isGonnaJump)
         {
             _isGonnaJump = true;
         }
@@ -200,7 +201,8 @@ public class PlayerMotor : MonoBehaviour
 
             // Crop up horizontal velocity component
             _velocity = Vector3.ProjectOnPlane(_velocity, groundNormal);
-            if (_isGonnaJump)
+            if (false && // @7DFPS: Jump is disabled in this game
+                _isGonnaJump)
             {
                 // Jump away
                 _velocity += Gravity.Up * JumpStrength;
