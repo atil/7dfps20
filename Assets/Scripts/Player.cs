@@ -22,4 +22,10 @@ public class Player : MonoBehaviour
         _mouseLook.Tick(dt);
         _playerMotor.Tick(dt);
     }
+
+    public void ResetAt(Transform t)
+    {
+        _playerMotor.ResetAt(t);
+        _mouseLook.ResetAt(t, null);
+    }
 }
