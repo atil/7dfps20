@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class Ui : MonoBehaviour
 
     [SerializeField]
     private FlashInfo _startFlashInfo;
+
+    public TextMeshProUGUI Text;
 
     public void StartFlash()
     {
@@ -23,6 +26,19 @@ public class Ui : MonoBehaviour
             {
                 _flashImage.color = _startFlashInfo.EndColor;
             });
+    }
+
+    public void ShowText(string text, float duration)
+    {
+        CoroutineStarter.Run(ShowTextCoroutine(text, duration));
+    }
+
+    private IEnumerator ShowTextCoroutine(string text, float duration)
+    {
+        Text.gameObject.SetActive(true);
+        Text.text = text;
+        yield return new WaitForSeconds(duration);
+        Text.gameObject.SetActive(false);
     }
 
 }
