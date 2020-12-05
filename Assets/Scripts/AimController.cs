@@ -57,9 +57,9 @@ public class AimController : MonoBehaviour
                     continue;
                 }
 
-                if (hit.transform.TryGetComponent(out MeshFilter meshFilter))
+                if (!hit.transform.TryGetComponent(out MeshFilter meshFilter))
                 {
-                    Debug.LogError("Aimed object doesn't have a mesh filter, even though it's layer is set as aimable");
+                    Debug.LogError($"Aimed object doesn't have a mesh filter, even though it's layer is set as aimable: {hit.transform}");
                     continue;
                 }
 
