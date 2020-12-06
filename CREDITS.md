@@ -1,4 +1,5 @@
 SabreCSG: https://github.com/sabresaurus/SabreCSG
+Glitch FX: https://github.com/keijiro/KinoGlitch
 ProGrids by Unity
 Carpet texture: https://opengameart.org/content/carpet-texture-red-seamless-texture-with-normalmap
 Woman texture: https://opengameart.org/content/proportionate-turn-around-clothed-female-raster-version

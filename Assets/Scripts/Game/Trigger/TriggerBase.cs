@@ -17,4 +17,9 @@ public abstract class TriggerBase : MonoBehaviour
     }
 
     protected abstract void OnTriggered();
+
+    public void ResetTrigger()
+    {
+        _isTriggered = false;
+    }
 }

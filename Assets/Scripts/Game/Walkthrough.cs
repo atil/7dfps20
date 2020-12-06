@@ -7,22 +7,46 @@ using UnityEngine;
 
 public class Walkthrough : MonoBehaviour
 {
-    public Color AmbientColor;
+    [Header("Start")]
     public Transform PlayerStart;
+    public bool HasTransitionFlash = true;
+    public bool HasGlitch = false;
+
+    [Header("Triggers")]
     public EndWalkthroughTrigger EndTrigger;
+
+    [Header("Usher")]
     public bool IsUsherLookingAtPlayer;
 
+    [Header("Environment")]
+    public Color AmbientColor;
     public Texture2D[] Posters;
-
     // TODO: Something with lights
 
     public void Init()
     {
         RenderSettings.ambientLight = AmbientColor;
         gameObject.SetActive(true);
+
+        foreach (TriggerBase tb in GetComponentsInChildren<TriggerBase>())
+        {
+            tb.ResetTrigger();
+        }
+
+        Ui ui = FindObjectOfType<Ui>();
+        if (HasTransitionFlash)
+        {
+            ui.TransitionFlash();
+        }
+        if (HasGlitch)
+        {
+            const float glitchDuration = 0.5f;
+            ui.Glitch(glitchDuration);
+            FindObjectOfType<Sfx>().Glitch(glitchDuration);
+        }
+
         Player player = FindObjectOfType<Player>();
         player.ResetAt(PlayerStart);
-
         Usher usher = FindObjectOfType<Usher>();
         if (usher != null)
         {

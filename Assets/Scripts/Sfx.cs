@@ -25,6 +25,7 @@ public class Sfx : MonoBehaviour
     public AudioClip EmptyFireClip;
     public AudioClip ClickClip;
     public AudioClip ButtonClip;
+    public AudioClip GlitchAudioClip;
 
     public List<AudioClip> Footsteps;
 
@@ -81,5 +82,18 @@ public class Sfx : MonoBehaviour
     {
         OtherAudioSource.PlayOneShot(ButtonClip);
     }
+
+    public void Glitch(float duration)
+    {
+        CoroutineStarter.Run(GlitchCoroutine(duration));
+    }
+
+    private IEnumerator GlitchCoroutine(float duration)
+    {
+        OtherAudioSource.PlayOneShot(GlitchAudioClip);
+        yield return new WaitForSeconds(duration);
+        OtherAudioSource.Stop();
+    }
+    
 }
 

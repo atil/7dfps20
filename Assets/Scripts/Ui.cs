@@ -1,9 +1,19 @@
-﻿using System;
+﻿using Kino;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public class FlashInfo
+{
+    public Color StartColor;
+    public Color EndColor;
+    public float Duration;
+    public AnimationCurve Curve;
+}
 
 public class Ui : MonoBehaviour
 {
@@ -12,6 +22,15 @@ public class Ui : MonoBehaviour
 
     [SerializeField]
     private FlashInfo _startFlashInfo;
+
+    [SerializeField]
+    private FlashInfo _transitionFlashInfo;
+
+    [SerializeField]
+    private AnalogGlitch _analogGlitch;
+
+    [SerializeField]
+    private DigitalGlitch _digitalGlitch;
 
     public TextMeshProUGUI Text;
 
@@ -28,6 +47,19 @@ public class Ui : MonoBehaviour
             });
     }
 
+    public void TransitionFlash()
+    {
+        Curve.Tween(_transitionFlashInfo.Curve, _transitionFlashInfo.Duration,
+            (t) =>
+            {
+                _flashImage.color = Color.Lerp(_transitionFlashInfo.StartColor, _transitionFlashInfo.EndColor, t);
+            },
+            () =>
+            {
+                _flashImage.color = _transitionFlashInfo.EndColor;
+            });
+    }
+
     public void ShowText(string text, float duration)
     {
         CoroutineStarter.Run(ShowTextCoroutine(text, duration));
@@ -41,13 +73,22 @@ public class Ui : MonoBehaviour
         Text.gameObject.SetActive(false);
     }
 
-}
+    public void Glitch(float duration)
+    {
+        CoroutineStarter.Run(GlitchCoroutine(duration));
+    }
 
-[Serializable]
-public class FlashInfo
-{
-    public Color StartColor;
-    public Color EndColor;
-    public float Duration;
-    public AnimationCurve Curve;
+    private IEnumerator GlitchCoroutine(float duration)
+    {
+        _analogGlitch.scanLineJitter = 0.5f;
+        _analogGlitch.colorDrift = 0.2f;
+        _digitalGlitch.intensity = 0.5f;
+
+        yield return new WaitForSeconds(duration);
+
+        _analogGlitch.scanLineJitter = 0f;
+        _analogGlitch.colorDrift = 0f;
+        _digitalGlitch.intensity = 0f;
+    }
+
 }

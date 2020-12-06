@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Standard Assets\Glitch\Editor\AnalogGlitchEditor.cs" />
+    <Compile Include="Assets\Standard Assets\Glitch\Editor\DigitalGlitchEditor.cs" />
     <Compile Include="Assets\Standard Assets\SabreCSG\Scripts\Brushes\CompoundBrushes\Editor\CurvedStairBrushInspector.cs" />
     <Compile Include="Assets\Standard Assets\SabreCSG\Scripts\Brushes\CompoundBrushes\Editor\HollowBoxBrushInspector.cs" />
     <Compile Include="Assets\Standard Assets\SabreCSG\Scripts\Brushes\CompoundBrushes\Editor\ShapeEditorBrushInspector.cs" />
@@ -648,8 +650,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Malee.ReorderableList.Editor">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Malee.ReorderableList.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -666,26 +677,17 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Malee.ReorderableList">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Malee.ReorderableList.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Malee.ReorderableList.Editor">
-      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Malee.ReorderableList.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Malee.ReorderableList">
-      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Malee.ReorderableList.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/atil/code/7dfps2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
