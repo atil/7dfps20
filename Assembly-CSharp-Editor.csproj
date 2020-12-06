@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Editor\EditorUtils.cs" />
     <Compile Include="Assets\Scripts\Editor\SpriteTextureSliceExporter.cs" />
     <Compile Include="Assets\Scripts\Editor\Texture2DExtensions.cs" />
+    <Compile Include="Assets\Scripts\Game\Animation\Editor\AnimationPlayerEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

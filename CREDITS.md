@@ -4,6 +4,7 @@ ProGrids by Unity
 Carpet texture: https://opengameart.org/content/carpet-texture-red-seamless-texture-with-normalmap
 Woman texture: https://opengameart.org/content/proportionate-turn-around-clothed-female-raster-version
 Drapes texture: https://opengameart.org/content/drapes
+Door texture: https://opengameart.org/content/double-door-school
 Sprite slicer: https://github.com/fadookie/SpriteSlicer
 Font: https://fonts.google.com/specimen/VT323?category=Monospace#standard-styles
 Artwork: https://opengameart.org/content/boooomb

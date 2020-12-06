@@ -67,8 +67,10 @@
     <Compile Include="Assets\Scripts\CoroutineStarter.cs" />
     <Compile Include="Assets\Scripts\Curve.cs" />
     <Compile Include="Assets\Scripts\Drawing.cs" />
+    <Compile Include="Assets\Scripts\Game\Animation\AnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Game.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\EndWalkthroughTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\PlayAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlaySfxTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\ShowTextTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\TriggerBase.cs" />

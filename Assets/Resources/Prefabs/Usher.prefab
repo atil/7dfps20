@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5982473175182581659}
   - component: {fileID: 5982473175182581654}
+  - component: {fileID: 8969555692489684803}
   m_Layer: 0
   m_Name: Usher
   m_TagString: Untagged
@@ -57,6 +58,48 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 0a72051f76860c84c8c8344036425b19, type: 3}
   Quad: {fileID: 5982473176339764185}
   IsLookingAtPlayer: 0
+--- !u!114 &8969555692489684803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982473175182581658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ce1e6b111273146b568df0d76a1e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Keyframes:
+  - Position: {x: 37, y: 0.85, z: 18}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Position: {x: 37.76, y: 0.85, z: 21.01}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  AnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Duration: 1
 --- !u!1 &5982473175702932653
 GameObject:
   m_ObjectHideFlags: 0
