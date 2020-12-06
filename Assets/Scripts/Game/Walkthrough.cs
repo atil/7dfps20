@@ -17,11 +17,12 @@ public class Walkthrough : MonoBehaviour
 
     [Header("Usher")]
     public bool IsUsherLookingAtPlayer;
+    public bool IsUsherSpookyWhenVisible;
 
     [Header("Environment")]
     public Color AmbientColor;
     public Texture2D[] Posters;
-    // TODO: Something with lights
+    public Light[] Lights;
 
     public void Init()
     {
@@ -51,6 +52,7 @@ public class Walkthrough : MonoBehaviour
         if (usher != null)
         {
             usher.IsLookingAtPlayer = IsUsherLookingAtPlayer;
+            usher.SpookState = IsUsherSpookyWhenVisible ? UsherSpookState.WaitingToTeleport : UsherSpookState.None;
         }
 
         GameObject artworkSlots = GameObject.Find("ArtworkSlots");
@@ -72,6 +74,10 @@ public class Walkthrough : MonoBehaviour
     public void Dispose()
     {
         gameObject.SetActive(false);
+        foreach (Light light in Lights)
+        {
+            light.enabled = true;
+        }
     }
 
     void OnDrawGizmos()

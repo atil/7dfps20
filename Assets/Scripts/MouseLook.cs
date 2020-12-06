@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
     private const int FovMax = 110;
     private const int FovMin = 60;
 
-    private float _sensitivity = 150;
+    private float _sensitivity = 600;
     private float _zoomSensitivity = 30;
 
     private float _fov = 60;
@@ -49,7 +49,7 @@ public class MouseLook : MonoBehaviour
         MainCamera.fieldOfView = Mathf.Lerp(MainCamera.fieldOfView, _currentFov, ZoomSpeed * dt);
         WeaponCamera.fieldOfView = Mathf.Lerp(WeaponCamera.fieldOfView, _currentFov, ZoomSpeed * dt);
 
-        if (Input.GetKey(KeyCode.LeftAlt))
+        if (false && Input.GetKey(KeyCode.LeftAlt))
         {
             _currentFov = ZoomFov;
         }

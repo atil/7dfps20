@@ -1,5 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+public enum UsherSpookState
+{
+    None,
+    WaitingToTeleport,
+    WaitingToBeSeen,
+    Spooked
+}
+
 public class Usher : MonoBehaviour
 {
     public MeshRenderer Renderer;
@@ -11,9 +20,12 @@ public class Usher : MonoBehaviour
 
     private Transform _playerTransform;
 
+    public UsherSpookState SpookState;
+
     void Start()
     {
         _playerTransform = FindObjectOfType<Player>().transform;
+
     }
 
     void Update()
@@ -73,6 +85,17 @@ public class Usher : MonoBehaviour
 
         Renderer.material.SetTexture("_MainTex", Textures[textureIndex]);
 
+    }
+
+    public void OnVisible()
+    {
+        if (SpookState != UsherSpookState.WaitingToBeSeen)
+        {
+            return;
+        }
+
+        FindObjectOfType<Sfx>().UsherSpook();
+        SpookState = UsherSpookState.Spooked;
     }
 
 }

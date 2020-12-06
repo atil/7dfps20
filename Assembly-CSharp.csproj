@@ -69,10 +69,12 @@
     <Compile Include="Assets\Scripts\Drawing.cs" />
     <Compile Include="Assets\Scripts\Game\Animation\AnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Game.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\BreakLightsTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\EndWalkthroughTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlayAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlaySfxTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\ShowTextTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\TeleportUsherTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\TriggerBase.cs" />
     <Compile Include="Assets\Scripts\Game\Usher.cs" />
     <Compile Include="Assets\Scripts\Game\Walkthrough.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\Scripts\Render\LowResEffect.cs" />
     <Compile Include="Assets\Scripts\Sfx.cs" />
     <Compile Include="Assets\Scripts\Ui.cs" />
+    <Compile Include="Assets\Scripts\UsherRenderer.cs" />
     <Compile Include="Assets\Scripts\Util.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
