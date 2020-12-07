@@ -59,6 +59,10 @@ public class Ui : MonoBehaviour
                 _flashImage.color = _transitionFlashInfo.EndColor;
             });
     }
+    public void ClearFlash()
+    {
+        _flashImage.color = Color.clear;
+    }
 
     public void ShowText(string text, float duration)
     {

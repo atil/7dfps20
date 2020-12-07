@@ -11,7 +11,8 @@ public class AnimKeyframe
 
 public class AnimationPlayer : MonoBehaviour
 {
-    public List<AnimKeyframe> Keyframes = new List<AnimKeyframe>();
+    public List<AnimKeyframe> Keyframes; 
+
     public AnimationCurve AnimCurve;
     public float Duration;
 
@@ -25,15 +26,17 @@ public class AnimationPlayer : MonoBehaviour
         AnimKeyframe sourceFrame = Keyframes[0];
         AnimKeyframe targetFrame = Keyframes[1];
 
+        float y = transform.position.y; // Needs to be kept due to usher jumping
+
         Curve.Tween(AnimCurve, Duration,
             (t) =>
             {
-                transform.position = Vector3.Lerp(sourceFrame.Position, targetFrame.Position, t);
+                transform.position = Vector3.Lerp(sourceFrame.Position, targetFrame.Position, t).WithY(y);
                 transform.rotation = Quaternion.Lerp(sourceFrame.Rotation, targetFrame.Rotation, t);
             },
             () =>
             {
-                transform.position = targetFrame.Position;
+                transform.position = targetFrame.Position.WithY(y);
                 transform.rotation = targetFrame.Rotation;
 
                 if (playEndSound && TryGetComponent(out AudioSource audioSource))

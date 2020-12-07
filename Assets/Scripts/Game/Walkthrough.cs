@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class Walkthrough : MonoBehaviour
 {
+
     [Header("Start")]
     public Transform PlayerStart;
     public bool HasTransitionFlash = true;
     public bool HasGlitch = false;
+    public bool HasBackgroundNoise = true;
 
     [Header("Triggers")]
     public EndWalkthroughTrigger EndTrigger;
@@ -26,8 +28,11 @@ public class Walkthrough : MonoBehaviour
 
     public void Init()
     {
-        RenderSettings.ambientLight = AmbientColor;
         gameObject.SetActive(true);
+
+        RenderSettings.ambientLight = AmbientColor;
+        Sfx sfx = FindObjectOfType<Sfx>();
+        sfx.MusicAudioSource.volume = HasBackgroundNoise ? Sfx.BaseMusicVolume : 0f;
 
         foreach (TriggerBase tb in GetComponentsInChildren<TriggerBase>())
         {
@@ -41,9 +46,10 @@ public class Walkthrough : MonoBehaviour
         }
         if (HasGlitch)
         {
+            ui.ClearFlash();
             const float glitchDuration = 0.5f;
             ui.Glitch(glitchDuration);
-            FindObjectOfType<Sfx>().Glitch(glitchDuration);
+            sfx.Glitch(glitchDuration);
         }
 
         Player player = FindObjectOfType<Player>();

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Game\Trigger\EndWalkthroughTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlayAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlaySfxTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\ScareTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\ShowTextTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\TeleportUsherTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\TriggerBase.cs" />

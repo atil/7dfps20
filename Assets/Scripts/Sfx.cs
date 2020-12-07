@@ -13,6 +13,8 @@ public enum GlitchSfxType
 
 public class Sfx : MonoBehaviour
 {
+    public static float BaseMusicVolume;
+
     public AudioSource WalkAudioSource;
     public AudioSource OtherAudioSource;
     public AudioSource MusicAudioSource;
@@ -32,6 +34,7 @@ public class Sfx : MonoBehaviour
 
     void Start()
     {
+        BaseMusicVolume = MusicAudioSource.volume;
 #if !AUDIO_ENABLED
         MusicAudioSource.volume = 0;
 #endif

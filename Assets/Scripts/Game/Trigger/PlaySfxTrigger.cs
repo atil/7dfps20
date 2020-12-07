@@ -5,18 +5,19 @@ namespace Assets.Scripts.Game
 {
     public class PlaySfxTrigger : TriggerBase
     {
-        private AudioSource _audioSource;
+        public AudioSource AudioSource;
 
         void Start()
         {
-            if (!this.TryGetComponentInChildren(out _audioSource)) {
+            if (AudioSource == null && !this.TryGetComponentInChildren(out AudioSource))
+            {
                 Debug.LogError($"Couldn't find audiosource with this sfx trigger {name}");
             }
         }
 
         protected override void OnTriggered()
         {
-            _audioSource.Play();
+            AudioSource.Play();
         }
     }
 }

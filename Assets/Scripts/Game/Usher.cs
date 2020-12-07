@@ -22,9 +22,37 @@ public class Usher : MonoBehaviour
 
     public UsherSpookState SpookState;
 
+    [Header("Jump")]
+    public bool IsJumping = false;
+    public AnimationCurve JumpCurve;
+    public float JumpHeight = 4f;
+
     void Start()
     {
         _playerTransform = FindObjectOfType<Player>().transform;
+
+        if (IsJumping)
+        {
+            StartCoroutine(JumpCoroutine());
+        }
+    }
+
+    private IEnumerator JumpCoroutine()
+    {
+        float baseY = transform.position.y;
+        const float jumpDuration = 0.5f;
+        for (float f = 0;;f += Time.deltaTime)
+        {
+            float t = JumpCurve.Evaluate(f / jumpDuration);
+            float y = Mathf.Lerp(baseY, JumpHeight, t);
+            transform.position = transform.position.WithY(y);
+
+            if (f > jumpDuration)
+            {
+                f = 0f;
+            }
+            yield return null;
+        }
 
     }
 
