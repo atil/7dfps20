@@ -48,7 +48,7 @@ public class PlayerMotor : MonoBehaviour
     // Along a dimension, we can't go faster than this
     // This dimension is relative to the controller, not global
     // Meaning that "max speend along X" means "max speed along 'right side' of the controller"
-    private const float MaxSpeedAlongOneDimension = 4f;
+    public float MaxSpeedAlongOneDimension = 4f;
 
     // When pressing to shift
     private const float WalkSpeed = 4f;

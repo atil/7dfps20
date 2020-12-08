@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\Game\Animation\AnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Game.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\BreakLightsTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\EndGameTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\EndSpookTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\EndWalkthroughTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlayAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\PlaySfxTrigger.cs" />
