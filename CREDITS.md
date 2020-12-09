@@ -34,3 +34,4 @@ Artwork: https://opengameart.org/content/andreass-darkness
 
 Door sfx: https://freesound.org/people/soundmary/sounds/117614/
 
+Noise: https://freesound.org/people/jlozano/sounds/19556/
