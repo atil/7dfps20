@@ -31,8 +31,13 @@ public class EndSpookTrigger : TriggerBase
 
         while (true)
         {
+            if (Player == null)
+            {
+                break; // endgame
+            }
+
             Vector3 toPlayer = (Player.transform.position - Usher.transform.position).normalized;
-            Usher.transform.position += toPlayer * 1f * Time.deltaTime;
+            Usher.transform.position += toPlayer * 1.3f * Time.deltaTime;
             yield return null;
         }
     }

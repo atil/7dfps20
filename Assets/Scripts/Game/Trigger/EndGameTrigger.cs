@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Game.Trigger
 {
@@ -7,7 +8,7 @@ namespace Assets.Scripts.Game.Trigger
     {
         protected override void OnTriggered()
         {
-            Application.Quit();
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
