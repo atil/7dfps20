@@ -6,7 +6,7 @@ public class CoroutineStarter : MonoBehaviour
     private static CoroutineStarter _slave;
     static CoroutineStarter()
     {
-        _slave = new GameObject("CoroutineStarter").AddComponent<CoroutineStarter>();
+        _slave = new UnityEngine.GameObject("CoroutineStarter").AddComponent<CoroutineStarter>();
         DontDestroyOnLoad(_slave.gameObject);
     }
 

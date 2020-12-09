@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayAnimationTrigger : TriggerBase
 {
-    public GameObject SingleDoor;
+    public UnityEngine.GameObject SingleDoor;
     public Usher Usher;
 
     protected override void OnTriggered()

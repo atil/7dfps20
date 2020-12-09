@@ -14,7 +14,11 @@ public class MouseLook : MonoBehaviour
     private const int FovMax = 110;
     private const int FovMin = 60;
 
-    private float _sensitivity = 300;
+#if UNITY_WEBGL
+    private float _sensitivity = 20;
+#else
+    private float _sensitivity = 150;
+#endif
     private float _zoomSensitivity = 30;
 
     private float _fov = 60;

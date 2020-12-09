@@ -61,7 +61,7 @@ public class Walkthrough : MonoBehaviour
             usher.SpookState = IsUsherSpookyWhenVisible ? UsherSpookState.WaitingToTeleport : UsherSpookState.None;
         }
 
-        GameObject artworkSlots = GameObject.Find("ArtworkSlots");
+        UnityEngine.GameObject artworkSlots = UnityEngine.GameObject.Find("ArtworkSlots");
         if (artworkSlots != null)
         {
             Debug.Assert(artworkSlots.transform.childCount == 4);

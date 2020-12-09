@@ -3,8 +3,7 @@ using System.Collections;
 
 public class ScareTrigger : TriggerBase
 {
-    public Usher Usher;
-    public Transform UsherTarget;
+    public GameObject UsherHead;
     public AudioSource ScareAudioSource;
 
     protected override void OnTriggered()
@@ -14,9 +13,14 @@ public class ScareTrigger : TriggerBase
     
     private IEnumerator ScareCoroutine()
     {
-        Usher.transform.position = UsherTarget.position;
-        Usher.transform.rotation = UsherTarget.rotation;
+        UsherHead.SetActive(true);
         ScareAudioSource.Play();
+        for (float f = 0; f < 2f; f += Time.deltaTime)
+        {
+            int a = Mathf.RoundToInt(f / 0.2f);
+            UsherHead.SetActive(a % 2 == 0);
+            yield return null;
+        }
         yield return new WaitForSeconds(2f);
         ScareAudioSource.Stop();
         FindObjectOfType<WalkthroughManager>().OnEndWalkthroughTriggered();
