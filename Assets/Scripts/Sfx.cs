@@ -32,7 +32,7 @@ public class Sfx : MonoBehaviour
 
     public List<AudioClip> Footsteps;
 
-    void Start()
+    void Awake() // Needs to be Awake()
     {
         BaseMusicVolume = MusicAudioSource.volume;
 #if !AUDIO_ENABLED
