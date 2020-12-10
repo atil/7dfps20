@@ -29,6 +29,7 @@ public class Sfx : MonoBehaviour
     public AudioClip ButtonClip;
     public AudioClip GlitchAudioClip;
     public AudioClip UsherSpookClip;
+    public AudioClip CinemaClickClip;
 
     public List<AudioClip> Footsteps;
 
@@ -102,6 +103,11 @@ public class Sfx : MonoBehaviour
     public void UsherSpook()
     {
         OtherAudioSource.PlayOneShot(UsherSpookClip);
+    }
+    
+    public void CinemaClick()
+    {
+        OtherAudioSource.PlayOneShot(CinemaClickClip);
     }
 
 }

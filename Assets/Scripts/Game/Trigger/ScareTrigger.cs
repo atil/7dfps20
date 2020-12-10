@@ -15,13 +15,13 @@ public class ScareTrigger : TriggerBase
     {
         UsherHead.SetActive(true);
         ScareAudioSource.Play();
-        for (float f = 0; f < 2f; f += Time.deltaTime)
+        for (float f = 0; f < 1f; f += Time.deltaTime)
         {
-            int a = Mathf.RoundToInt(f / 0.2f);
+            int a = Mathf.RoundToInt(f / 0.05f);
             UsherHead.SetActive(a % 2 == 0);
             yield return null;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
         ScareAudioSource.Stop();
         FindObjectOfType<WalkthroughManager>().OnEndWalkthroughTriggered();
     }

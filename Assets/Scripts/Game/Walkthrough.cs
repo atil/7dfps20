@@ -33,6 +33,7 @@ public class Walkthrough : MonoBehaviour
         RenderSettings.ambientLight = AmbientColor;
         Sfx sfx = FindObjectOfType<Sfx>();
         sfx.MusicAudioSource.volume = HasBackgroundNoise ? Sfx.BaseMusicVolume : 0f;
+        sfx.CinemaClick();
 
         foreach (TriggerBase tb in GetComponentsInChildren<TriggerBase>())
         {
