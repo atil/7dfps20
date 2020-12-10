@@ -4,7 +4,8 @@ using System.Collections;
 public class EndSpookTrigger : TriggerBase
 {
     public Color AmbientColor;
-    public AudioSource AudioSource;
+    public AudioSource AudioSource_MovieStartsNow;
+    public AudioSource AudioSource_EndSpook;
     public Usher Usher;
     public Player Player;
 
@@ -13,8 +14,7 @@ public class EndSpookTrigger : TriggerBase
     protected override void OnTriggered()
     {
         RenderSettings.ambientLight = AmbientColor;
-        AudioSource.Play();
-        Usher.GetComponentInChildren<AudioSource>().Play();
+        AudioSource_MovieStartsNow.Play();
         FindObjectOfType<PlayerMotor>().MaxSpeedAlongOneDimension *= 0.2f;
         CoroutineStarter.Run(UsherApproachToPlayerCoroutine());
 
@@ -22,12 +22,15 @@ public class EndSpookTrigger : TriggerBase
 
     private IEnumerator UsherApproachToPlayerCoroutine()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
 
         foreach (Light light in Lights)
         {
             yield return CoroutineStarter.Run(FlickerAndGoOff(light));
         }
+
+        float maxDist = Vector3.Distance(Player.transform.position, Usher.transform.position);
+        AudioSource_EndSpook.Play();
 
         while (true)
         {
@@ -35,6 +38,9 @@ public class EndSpookTrigger : TriggerBase
             {
                 break; // endgame
             }
+
+            float curDist = Vector3.Distance(Player.transform.position, Usher.transform.position);
+            AudioSource_EndSpook.volume = Mathf.Lerp(0f, 1f, 1f - (curDist / maxDist));
 
             Vector3 toPlayer = (Player.transform.position - Usher.transform.position).normalized;
             Usher.transform.position += toPlayer * 1.3f * Time.deltaTime;
