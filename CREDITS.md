@@ -1,3 +1,5 @@
+Voice: [Damla Kockar](https://www.instagram.com/damlatiltak/)
+
 SabreCSG: https://github.com/sabresaurus/SabreCSG
 
 Glitch FX: https://github.com/keijiro/KinoGlitch
